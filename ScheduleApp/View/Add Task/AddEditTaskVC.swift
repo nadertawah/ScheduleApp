@@ -125,7 +125,7 @@ class AddEditTaskVC: UIViewController
             dateFromPicker.date = taskToEdit.from ?? VM.date
             dateToPicker.date = taskToEdit.to ?? VM.date
             detailsTextView.text = taskToEdit.details
-            detailsTextView.textColor = .black
+            detailsTextView.textColor = self.isLightMode() ? .black : .white
             
             changeTaskBGColorAndForeground(color: UIColor.color(data: taskToEdit.color) ?? .link)
         }
@@ -168,7 +168,7 @@ extension AddEditTaskVC : UITextViewDelegate
         if detailsTextView.textColor == UIColor.lightGray
         {
             detailsTextView.text = ""
-            detailsTextView.textColor = UIColor.black
+            detailsTextView.textColor = self.isLightMode() ? .black : .white
         }
     }
     

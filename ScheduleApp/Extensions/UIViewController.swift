@@ -36,3 +36,20 @@ extension UIViewController
         view.endEditing(true)
     }
 }
+
+
+extension UIViewController
+{
+    func isLightMode() -> Bool
+    {
+        switch self.traitCollection.userInterfaceStyle
+        {
+            case .light, .unspecified:
+                return true
+            case .dark:
+                return false
+        @unknown default:
+            return true
+        }
+    }
+}
